@@ -42,11 +42,20 @@ Module MethodCallsExample
 
     'by reference doesn't copy input value it can rewrite the original value
     'following example rewrites userMessage value outside of sub routine
+    'try running this code as ByVal and ByRef to witness the difference
     Sub SendMessage(ByRef message As String)
         Console.WriteLine($"In SendMessage: {message}.")
         message = "Goodbye."
         Console.WriteLine($"In SendMessage: {message}")
-
     End Sub
+
+    'Function RunningTotal(value As Integer, clear As Boolean) As Integer
+    '    Static total As Integer
+    '    If clear = False Then
+    '        RunningTotal += value
+    '    Else total = 0
+    '    End If
+    '    Return total
+    'End Function
 
 End Module
