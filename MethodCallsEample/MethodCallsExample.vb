@@ -14,14 +14,22 @@ Module MethodCallsExample
     Sub Main()
         Dim userMessage As String = "Hello"
 
-        SayHello()
-        SumOf(5, 7)
-        ProductOf(4, 5)
+        'SayHello()
+        ' SumOf(5, 7)
+        ' ProductOf(4, 5)
 
-        Console.WriteLine($"In Main: {userMessage}")
-        SendMessage(userMessage)
-        Console.WriteLine($"In Main: {userMessage}")
+        'Console.WriteLine($"In Main: {userMessage}")
+        'SendMessage(userMessage)
+        ' Console.WriteLine($"In Main: {userMessage}")
+        ' Console.ReadLine()
+
+        'testing random numbers
+        Randomize()
+        For i = 0 To 100
+            Console.WriteLine((CInt(Rnd() * 10)) + 10)
+        Next
         Console.ReadLine()
+
     End Sub
 
     'Basic sub routine says helllo
@@ -49,13 +57,15 @@ Module MethodCallsExample
         Console.WriteLine($"In SendMessage: {message}")
     End Sub
 
-    'Function RunningTotal(value As Integer, clear As Boolean) As Integer
-    '    Static total As Integer
-    '    If clear = False Then
-    '        RunningTotal += value
-    '    Else total = 0
-    '    End If
-    '    Return total
-    'End Function
+    Function RunningTotal(value As Integer, clear As Boolean) As Integer
+        Static total As Integer
+        If clear = False Then
+            RunningTotal += value
+        Else total = 0
+        End If
+        Return total
+    End Function
+
+
 
 End Module
