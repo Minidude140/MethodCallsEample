@@ -32,6 +32,14 @@ Module MethodCallsExample
 
     End Sub
 
+    'in progress random number function within range
+    'Function randomIntegerBetween() As Integer
+    '    Dim result As Integer
+    '    Randomize()
+    '    CInt(Rnd())
+    '    Return result
+    'End Function
+
     'Basic sub routine says helllo
     Sub SayHello()
         Console.WriteLine("Hello")
