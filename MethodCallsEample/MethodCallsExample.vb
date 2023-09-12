@@ -13,6 +13,9 @@ Module MethodCallsExample
     'Sub main always runs.  It will go to the routine called and return to main after sub routine finishes
     Sub Main()
         Dim userMessage As String = "Hello"
+        Dim numberCheck As Integer
+        Dim min As Integer = 10
+        Dim max As Integer = 20
 
         'SayHello()
         ' SumOf(5, 7)
@@ -24,21 +27,41 @@ Module MethodCallsExample
         ' Console.ReadLine()
 
         'testing random numbers
-        Randomize()
-        For i = 0 To 100
-            Console.WriteLine((CInt(Rnd() * 10)) + 10)
-        Next
-        Console.ReadLine()
+        'randomize()
+        'for i = 0 to 100
+        '    console.writeline((cint(rnd() * 10)) + 10)
+        'next
+        'console.readline()
 
+        'test loop
+        For i = 0 To 1000
+            numberCheck = randomintegerbetween(min, max)
+            Console.WriteLine(numberCheck)
+            If numberCheck < min Or numberCheck > max Then
+                Console.WriteLine("Oops Out of Range!!!")
+                i = 1000
+
+            End If
+        Next
+
+        Console.Read()
     End Sub
 
     'in progress random number function within range
-    'Function randomIntegerBetween() As Integer
-    '    Dim result As Integer
-    '    Randomize()
-    '    CInt(Rnd())
-    '    Return result
-    'End Function
+    ''' <summary>
+    ''' Random integer between min and max, inclusive.
+    ''' max must be greater than min
+    ''' </summary>
+    ''' <param name="min"></param>
+    ''' <param name="max"></param>
+    ''' <returns>Random integer between min and max</returns>
+    Function randomintegerbetween(min As Integer, max As Integer) As Integer
+        Dim result As Integer
+        Randomize()
+        result = CInt(Rnd() * (max - min)) + min
+
+        Return result
+    End Function
 
     'Basic sub routine says helllo
     Sub SayHello()
